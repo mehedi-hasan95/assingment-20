@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "home",
+        "slug": "/"
+    },
+    {
+        "id": 2,
+        "title": "about",
+        "slug": "/about"
+    },
+    {
+        "id": 3,
+        "title": "blog",
+        "slug": "/blog"
+    },
+    {
+        "id": 4,
+
+        "title": "service",
+        "slug": "/service"
+    },
+    {
+        "id": 5,
+        "title": "contact",
+        "slug": "/contact"
+    },
+    {
+        "id": 1,
+        "title": "login",
+        "slug": "/login"
+    },
+    {
+        "id": 1,
+        "title": "register",
+        "slug": "/register"
+    }
+]
