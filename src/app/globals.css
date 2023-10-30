@@ -7,3 +7,13 @@ body,
 :root {
     height: 100%;
 }
+
+.titleBg {
+    background: linear-gradient(180deg, #434ff2 40%, #972afb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bg {
+    @apply bg-gradient-to-r from-[#D1CCFC] via-[#F3F5FE];
+}
