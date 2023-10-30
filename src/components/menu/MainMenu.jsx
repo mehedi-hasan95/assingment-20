@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import menus from "@/utils/MenuItems.json";
-import { AlignVerticalDistributeCenter, X } from "lucide-react";
+import { AlignCenter, X } from "lucide-react";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 const MainMenu = () => {
@@ -24,7 +24,7 @@ const MainMenu = () => {
                                 href={item.slug}
                                 className={`flex items-center px-4 -mb-1 capitalize ${
                                     pathName === item.slug
-                                        ? "text-blue-600"
+                                        ? "text-blue-600 font-bold"
                                         : ""
                                 }`}
                             >
@@ -38,21 +38,21 @@ const MainMenu = () => {
                     onClick={() => setOpen(!open)}
                     className="md:hidden cursor-pointer"
                 >
-                    {open ? (
-                        <X size={32} />
-                    ) : (
-                        <AlignVerticalDistributeCenter size={32} />
-                    )}
+                    {open ? <X size={32} /> : <AlignCenter size={32} />}
                 </div>
             </div>
             {open && (
-                <ul className="items-stretch flex flex-col space-y-3 md:hidden">
+                <ul className="items-stretch flex flex-col space-y-3 md:hidden h-screen">
                     {menus.map((item) => (
                         <li key={item.id} className="flex">
                             <Link
                                 onClick={() => setOpen(false)}
                                 href={item.slug}
-                                className="flex items-center px-4 -mb-1 border-b-2 border-transparent"
+                                className={`flex items-center px-4 -mb-1 capitalize ${
+                                    pathName === item.slug
+                                        ? "text-blue-600 font-bold"
+                                        : ""
+                                }`}
                             >
                                 {item.title}
                             </Link>
