@@ -48,7 +48,10 @@ const Register = () => {
         }
     };
     return (
-        <div className="container mx-auto p-4 py-16">
+        <div className="container mx-auto p-4 py-16 w-full">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-max font-semibold pb-6 mx-auto titleBg">
+                Register
+            </h2>
             <form onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-y-3">

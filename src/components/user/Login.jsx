@@ -38,8 +38,10 @@ const Login = (props) => {
         }
     };
     return (
-        <div className="max-w-3xl mx-auto p-4 py-20">
-            <h2 className="text-3xl text-center font-bold">Login</h2>
+        <div className="max-w-3xl mx-auto p-4 py-20 w-full">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-max font-semibold pb-6 mx-auto titleBg">
+                Login
+            </h2>
             <form onSubmit={handleLogin}>
                 <div className="flex flex-col gap-5 pt-5">
                     <input
