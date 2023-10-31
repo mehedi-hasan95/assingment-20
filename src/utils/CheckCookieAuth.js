@@ -11,13 +11,7 @@ export async function CheckCookieAuth(req) {
         requestHeader.set("firstName", payload["firstName"]);
         return NextResponse.next({ request: { headers: requestHeader } });
     } catch (e) {
-        const requestHeader = new Headers(req.headers);
-        requestHeader.set("email", "0");
-        requestHeader.set("id", "0");
-        requestHeader.set("firstName", "0");
-        return NextResponse.next({
-            request: { headers: requestHeader },
-        });
+        return NextResponse.redirect(new URL("/user/login", req.url));
     }
 }
 // Which page user can't visit without login

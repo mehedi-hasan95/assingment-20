@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { CreateJWT } from "@/utility/JWTHelper";
+import { CreateJWT } from "@/utils/JWTHelper";
 
 export async function POST(req, res) {
     try {

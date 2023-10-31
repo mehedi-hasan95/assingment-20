@@ -27,7 +27,7 @@ const Login = () => {
             const result = await response.json();
             console.log(result);
             if (result.status === "success") {
-                router.replace("/");
+                router.replace("/dashboard");
                 router.refresh();
             } else {
                 setLoginFail("Email or Password is not match");
