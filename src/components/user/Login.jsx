@@ -1,9 +1,9 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const Login = (props) => {
+const Login = () => {
     const router = useRouter();
     const [loginFail, setLoginFail] = useState("");
     const [loading, setLoading] = useState(false);
@@ -25,6 +25,7 @@ const Login = (props) => {
             });
 
             const result = await response.json();
+            console.log(result);
             if (result.status === "success") {
                 router.replace("/");
                 router.refresh();
