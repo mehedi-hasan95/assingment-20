@@ -9,11 +9,11 @@ body,
 }
 
 .titleBg {
-    background: linear-gradient(180deg, #434ff2 40%, #972afb 100%);
+    background: linear-gradient(90deg, #434ff2 40%, #972afb 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .bg {
-    @apply bg-gradient-to-r from-[#D1CCFC] via-[#F3F5FE];
+    @apply bg-gradient-to-r from-[#E7E6FD] via-[#F3F5FE];
 }
