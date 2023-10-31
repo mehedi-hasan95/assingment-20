@@ -33,6 +33,42 @@ const MainMenu = () => {
                                 </Link>
                             </li>
                         ))}
+                        <li className="flex">
+                            <Link
+                                href="/dashboard"
+                                className={`flex items-center px-4 -mb-1 capitalize ${
+                                    pathName === "/dashboard"
+                                        ? "text-blue-600 font-bold"
+                                        : ""
+                                }`}
+                            >
+                                dashboard
+                            </Link>
+                        </li>
+                        <li className="flex">
+                            <Link
+                                href="/user/login"
+                                className={`flex items-center px-4 -mb-1 capitalize ${
+                                    pathName === "/user/login"
+                                        ? "text-blue-600 font-bold"
+                                        : ""
+                                }`}
+                            >
+                                login
+                            </Link>
+                        </li>
+                        <li className="flex">
+                            <Link
+                                href="/user/register"
+                                className={`flex items-center px-4 -mb-1 capitalize ${
+                                    pathName === "/user/register"
+                                        ? "text-blue-600 font-bold"
+                                        : ""
+                                }`}
+                            >
+                                register
+                            </Link>
+                        </li>
                     </ul>
 
                     <div

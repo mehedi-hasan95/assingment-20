@@ -24,15 +24,5 @@
         "id": 5,
         "title": "contact",
         "slug": "/contact"
-    },
-    {
-        "id": 6,
-        "title": "login",
-        "slug": "/login"
-    },
-    {
-        "id": 7,
-        "title": "register",
-        "slug": "/register"
     }
 ]
