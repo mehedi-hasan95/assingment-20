@@ -8,7 +8,6 @@ const MainMenu = (props) => {
     const [open, setOpen] = useState(false);
     const pathName = usePathname();
     const router = useRouter();
-    console.log(props.firstName);
     // LogOut functionality
     const logOut = async () => {
         try {

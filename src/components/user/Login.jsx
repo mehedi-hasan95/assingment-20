@@ -25,7 +25,6 @@ const Login = () => {
             });
 
             const result = await response.json();
-            console.log(result);
             if (result.status === "success") {
                 router.replace("/dashboard");
                 router.refresh();

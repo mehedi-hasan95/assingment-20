@@ -4,14 +4,14 @@ const page = () => {
             <form className="flex flex-col gap-y-4">
                 <div className="flex flex-col gap-y-2">
                     <label htmlFor="title" className="font-semibold">
-                        Category Title:
+                        Post Title:
                     </label>
                     <input
                         type="text"
                         name="title"
                         id="title"
                         className="border border-black px-3 py-2 rounded-lg"
-                        placeholder="Image CDN"
+                        placeholder="Post title"
                     />
                 </div>
                 <div className="flex flex-col gap-y-2">
@@ -37,19 +37,19 @@ const page = () => {
                         cols="30"
                         rows="5"
                         className="border border-black px-3 py-2 rounded-lg w-full"
-                        placeholder="Content"
+                        placeholder="Your Content"
                     ></textarea>
                 </div>
                 <div className="flex flex-col gap-y-2">
                     <label htmlFor="postImg" className="font-semibold">
-                        Category Image:
+                        Post Image:
                     </label>
                     <input
                         type="text"
                         name="postImg"
                         id="postImg"
                         className="border border-black px-3 py-2 rounded-lg"
-                        placeholder="Image CDN"
+                        placeholder="Post Image CDN"
                     />
                 </div>
                 <input

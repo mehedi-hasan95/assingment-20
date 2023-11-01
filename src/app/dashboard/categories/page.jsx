@@ -11,12 +11,12 @@ const page = () => {
                         name="catImg"
                         id="catImg"
                         className="border border-black px-3 py-2 rounded-lg"
-                        placeholder="Image CDN"
+                        placeholder="Post Title"
                     />
                 </div>
                 <div className="flex flex-col gap-y-2">
                     <label htmlFor="title" className="font-semibold">
-                        Category Image:
+                        Category Name:
                     </label>
                     <input
                         type="text"

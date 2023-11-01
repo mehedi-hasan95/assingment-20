@@ -3,6 +3,9 @@ import Image from "next/image";
 const Testimonial = () => {
     return (
         <section className="my-8 bg">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-max font-semibold pb-6 mx-auto titleBg pt-10">
+                What Our Claient Says:
+            </h2>
             <div className="container flex flex-col items-center p-4 mx-auto space-y-6 md:p-8">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
