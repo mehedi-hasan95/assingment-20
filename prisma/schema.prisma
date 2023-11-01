@@ -27,6 +27,7 @@ model categories {
   id        Int      @id @default(autoincrement())
   title     String   @db.VarChar(50)
   slug      String   @db.VarChar(100)
+  catImg    String   @db.VarChar(200)
   createdAt DateTime @default(now()) @db.Timestamp(0)
   updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
@@ -38,6 +39,7 @@ model posts {
   short_desc String   @db.VarChar(300)
   desc       String   @db.Text
   count      Int      @default(0)
+  postImg    String   @db.VarChar(200)
   userId     Int      @db.Int
   users      users    @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade)
   createdAt  DateTime @default(now()) @db.Timestamp(0)

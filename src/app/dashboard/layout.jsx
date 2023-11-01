@@ -6,7 +6,7 @@ const DashboardLayout = ({ children }) => {
         <div>
             <MainMenu />
             <div className="container mx-auto p-4 md:flex">
-                <div className="w-1/3 flex gap-5 flex-col">
+                <div className="w-1/3 flex gap-5 flex-col bg py-10 px-2">
                     <Link
                         href="/dashboard/categories"
                         className="bg-slate-200 px-3 py-2 max-w-max "
@@ -20,7 +20,7 @@ const DashboardLayout = ({ children }) => {
                         Create Posts
                     </Link>
                 </div>
-                <div className="w-2/3">{children}</div>
+                <div className="w-2/3 py-10 px-2">{children}</div>
             </div>
         </div>
     );
