@@ -45,3 +45,14 @@ model posts {
   createdAt  DateTime @default(now()) @db.Timestamp(0)
   updatedAt  DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
+
+model services {
+  id         Int      @id @default(autoincrement())
+  title      String   @db.VarChar(200)
+  slug       String   @unique @db.VarChar(200)
+  short_desc String   @db.VarChar(300)
+  desc       String   @db.Text
+  serviceImg String   @db.VarChar(200)
+  createdAt  DateTime @default(now()) @db.Timestamp(0)
+  updatedAt  DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
