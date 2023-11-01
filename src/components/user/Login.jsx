@@ -27,7 +27,6 @@ const Login = () => {
             const result = await response.json();
             if (result.status === "success") {
                 router.replace("/dashboard");
-                router.refresh();
             } else {
                 setLoginFail("Email or Password is not match");
             }
@@ -62,7 +61,7 @@ const Login = () => {
                     {loading ? (
                         <button
                             type="button"
-                            class="bg-gray-700 cursor-not-allowed flex justify-center items-center gap-4 max-w-max px-4 py-3 text-white font-bold"
+                            className="bg-gray-700 cursor-not-allowed flex justify-center items-center gap-4 max-w-max px-4 py-3 text-white font-bold"
                             disabled
                         >
                             Processing...

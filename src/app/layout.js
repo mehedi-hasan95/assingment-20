@@ -12,7 +12,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={inter.className}>
+            <body
+                className={
+                    (inter.className, "flex flex-col justify-between h-[100vh]")
+                }
+            >
                 {children}
                 <FooterLayout />
             </body>
