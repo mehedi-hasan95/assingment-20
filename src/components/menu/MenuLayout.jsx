@@ -1,18 +1,11 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-import PlainMenu from "./PlainMenu";
 import MainMenu from "./MainMenu";
-
+import { headers } from "next/headers";
 const MenuLayout = () => {
-    const pathName = usePathname();
+    const headersList = headers();
+    const firstName = headersList.get("firstName");
     return (
         <div>
-            {pathName === "/login" || pathName === "/register" ? (
-                <PlainMenu />
-            ) : (
-                <MainMenu />
-            )}
+            <MainMenu firstName={firstName} />
         </div>
     );
 };

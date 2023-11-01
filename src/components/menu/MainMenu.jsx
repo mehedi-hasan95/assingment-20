@@ -3,10 +3,28 @@ import Link from "next/link";
 import menus from "@/utils/MenuItems.json";
 import { AlignCenter, X } from "lucide-react";
 import { useState } from "react";
-import { usePathname } from "next/navigation";
-const MainMenu = () => {
+import { usePathname, useRouter } from "next/navigation";
+const MainMenu = (props) => {
     const [open, setOpen] = useState(false);
     const pathName = usePathname();
+    const router = useRouter();
+    console.log(props.firstName);
+    // LogOut functionality
+    const logOut = async () => {
+        try {
+            const response = await fetch("/api/user/login", {
+                method: "GET",
+            });
+
+            const result = await response.json();
+            if (result.status === "success") {
+                router.replace("/");
+                router.refresh();
+            }
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
     return (
         <div className="bg">
             <header className="container mx-auto p-4 border-b-2 border-purple-100">
@@ -46,29 +64,42 @@ const MainMenu = () => {
                             </Link>
                         </li>
                         <li className="flex">
-                            <Link
-                                href="/user/login"
-                                className={`flex items-center px-4 -mb-1 capitalize ${
-                                    pathName === "/user/login"
-                                        ? "text-blue-600 font-bold"
-                                        : ""
-                                }`}
-                            >
-                                login
-                            </Link>
+                            {props.firstName !== null ? (
+                                <button
+                                    className="flex items-center px-4 -mb-1 capitalize"
+                                    onClick={logOut}
+                                >
+                                    Log Out
+                                </button>
+                            ) : (
+                                <Link
+                                    href="/user/login"
+                                    className={`flex items-center px-4 -mb-1 capitalize ${
+                                        pathName === "/user/login"
+                                            ? "text-blue-600 font-bold"
+                                            : ""
+                                    }`}
+                                >
+                                    login
+                                </Link>
+                            )}
                         </li>
-                        <li className="flex">
-                            <Link
-                                href="/user/register"
-                                className={`flex items-center px-4 -mb-1 capitalize ${
-                                    pathName === "/user/register"
-                                        ? "text-blue-600 font-bold"
-                                        : ""
-                                }`}
-                            >
-                                register
-                            </Link>
-                        </li>
+                        {props.firstName === null ? (
+                            <li className="flex">
+                                <Link
+                                    href="/user/register"
+                                    className={`flex items-center px-4 -mb-1 capitalize ${
+                                        pathName === "/user/register"
+                                            ? "text-blue-600 font-bold"
+                                            : ""
+                                    }`}
+                                >
+                                    register
+                                </Link>
+                            </li>
+                        ) : (
+                            ""
+                        )}
                     </ul>
 
                     <div
