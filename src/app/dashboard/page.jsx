@@ -1,5 +1,12 @@
+import MainMenu from "@/components/menu/MainMenu";
+
 const page = () => {
-    return <div>Dashboard</div>;
+    return (
+        <div>
+            <MainMenu />
+            <div>Dashboard</div>
+        </div>
+    );
 };
 
 export default page;

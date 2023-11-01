@@ -3,10 +3,12 @@ import Hero from "@/components/Hero";
 import HeroSection from "@/components/HeroSection";
 import Post from "@/components/Post";
 import Testimonial from "@/components/Testimonial";
+import MenuLayout from "@/components/menu/MenuLayout";
 
 export default function Home() {
     return (
         <div>
+            <MenuLayout />
             <HeroSection />
             <Hero />
             <Testimonial />
