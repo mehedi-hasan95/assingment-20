@@ -20,4 +20,26 @@ model users {
   otp       String   @db.VarChar(10)
   createdAt DateTime @default(now()) @db.Timestamp(0)
   updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+  posts     posts[]
+}
+
+model categories {
+  id        Int      @id @default(autoincrement())
+  title     String   @db.VarChar(50)
+  slug      String   @db.VarChar(100)
+  createdAt DateTime @default(now()) @db.Timestamp(0)
+  updatedAt DateTime @default(now()) @updatedAt @db.Timestamp(0)
+}
+
+model posts {
+  id         Int      @id @default(autoincrement())
+  title      String   @db.VarChar(200)
+  slug       String   @db.VarChar(200)
+  short_desc String   @db.VarChar(300)
+  desc       String   @db.Text
+  count      Int      @default(0)
+  userId     Int      @db.Int
+  users      users    @relation(fields: [userId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  createdAt  DateTime @default(now()) @db.Timestamp(0)
+  updatedAt  DateTime @default(now()) @updatedAt @db.Timestamp(0)
 }
