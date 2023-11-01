@@ -8,7 +8,7 @@ const FooterLayout = () => {
     const pathName = usePathname();
     return (
         <div>
-            {pathName === "/login" || pathName === "/register" ? (
+            {pathName === "/user/login" || pathName === "/user/register" ? (
                 <PlainFooter />
             ) : (
                 <MainFooter />

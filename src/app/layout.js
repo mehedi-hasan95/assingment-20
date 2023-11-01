@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
         <html lang="en">
             <body
                 className={
-                    (inter.className, "flex flex-col justify-between h-[100vh]")
+                    (inter.className, "flex flex-col justify-between h-screen")
                 }
             >
                 {children}
