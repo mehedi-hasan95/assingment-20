@@ -1,7 +1,25 @@
-const page = () => {
+"use client";
+const CreatePost = () => {
+    //Convert title into slug
+    const slugify = (str) =>
+        str
+            .toLowerCase()
+            .trim()
+            .replace(/[^\w\s-]/g, "")
+            .replace(/[\s_-]+/g, "-")
+            .replace(/^-+|-+$&/g, "");
+    const handlePost = async (e) => {
+        e.preventDefault();
+        const title = e.target.title.value;
+        const short_Desc = e.target.short_Desc.value;
+        const desc = e.target.desc.value;
+        const postImg = e.target.postImg.value;
+        const data = { title, slug: slugify(title), short_Desc, desc, postImg };
+        console.log(data);
+    };
     return (
         <div>
-            <form className="flex flex-col gap-y-4">
+            <form onSubmit={handlePost} className="flex flex-col gap-y-4">
                 <div className="flex flex-col gap-y-2">
                     <label htmlFor="title" className="font-semibold">
                         Post Title:
@@ -62,4 +80,4 @@ const page = () => {
     );
 };
 
-export default page;
+export default CreatePost;

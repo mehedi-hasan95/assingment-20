@@ -17,3 +17,12 @@ export async function POST(req, res) {
         return NextResponse.json({ msg: "faill", error });
     }
 }
+
+export async function GET(req, res) {
+    try {
+        const categories = await prisma.categories.findMany();
+        return NextResponse.json({ msg: "success", categories });
+    } catch (error) {
+        return NextResponse.json({ msg: "faill", error });
+    }
+}
