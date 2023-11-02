@@ -19,7 +19,6 @@ const CreateCategories = () => {
         const title = e.target.title.value;
         const catImg = e.target.catImg.value;
         const data = { title, catImg, slug: slugify(title) };
-        console.log(data);
         try {
             setLoading(true);
             const response = await fetch("/api/categories", {

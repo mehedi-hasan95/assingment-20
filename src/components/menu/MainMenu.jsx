@@ -16,7 +16,6 @@ const MainMenu = (props) => {
             });
 
             const result = await response.json();
-            console.log(result.status);
             if (result.status === "success") {
                 router.replace("/");
                 router.refresh();

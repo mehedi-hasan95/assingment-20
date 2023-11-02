@@ -35,7 +35,6 @@ const CreateServices = () => {
             });
 
             const result = await response.json();
-            console.log(result);
             if (result.msg === "success") {
                 router.push("/dashboard");
             }
