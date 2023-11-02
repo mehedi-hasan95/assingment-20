@@ -38,40 +38,75 @@ const ContactPage = () => {
         <div>
             <MainMenu />
             <div className="container mx-auto p-4">
+                <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-max font-semibold pb-6 mx-auto titleBg pt-10">
+                    Contact with Us:
+                </h2>
                 <form onSubmit={submitMessage}>
-                    <input
-                        type="text"
-                        name="name"
-                        id=""
-                        className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
-                        placeholder="Your Name"
-                        required
-                    />
-                    <input
-                        type="email"
-                        name="email"
-                        id=""
-                        className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
-                        placeholder="Your Email"
-                        required
-                    />
-                    <input
-                        type="text"
-                        name="subject"
-                        id=""
-                        className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
-                        placeholder="Sbuject"
-                        required
-                    />
-                    <textarea
-                        name="message"
-                        id=""
-                        cols="30"
-                        rows="10"
-                        className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
-                        placeholder="Message..."
-                        required
-                    ></textarea>
+                    <div className="flex gap-y-2 flex-col">
+                        <label className="text-xl font-semibold" htmlFor="name">
+                            Your Name:
+                        </label>
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
+                            placeholder="Your Name"
+                            required
+                        />
+                    </div>
+                    <div className="flex gap-y-2 flex-col">
+                        <label
+                            className="text-xl font-semibold"
+                            htmlFor="email"
+                        >
+                            Your Email:
+                        </label>
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
+                            placeholder="Your Email"
+                            required
+                        />
+                    </div>
+
+                    <div className="flex gap-y-2 flex-col">
+                        <label
+                            className="text-xl font-semibold"
+                            htmlFor="subject"
+                        >
+                            Sbuject:
+                        </label>
+                        <input
+                            type="text"
+                            name="subject"
+                            id="subject"
+                            className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
+                            placeholder="Sbuject"
+                            required
+                        />
+                    </div>
+
+                    <div className="flex gap-y-2 flex-col">
+                        <label
+                            className="text-xl font-semibold"
+                            htmlFor="message"
+                        >
+                            Your Message:
+                        </label>
+                        <textarea
+                            name="message"
+                            id="message"
+                            cols="30"
+                            rows="10"
+                            className="border-2 border-black rounded-lg px-3 py-2 w-full mb-3"
+                            placeholder="Message..."
+                            required
+                        ></textarea>
+                    </div>
+
                     {loading ? (
                         <button
                             disabled
