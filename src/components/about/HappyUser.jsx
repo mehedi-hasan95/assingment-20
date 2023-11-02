@@ -1,6 +1,9 @@
 const HappyUser = () => {
     return (
         <section className="p-6 dark:bg-gray-800 dark:text-gray-100">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-max font-semibold pb-6 mx-auto titleBg pt-10">
+                Our Happy User
+            </h2>
             <div className="container mx-auto grid justify-center grid-cols-2 text-center lg:grid-cols-3">
                 <div className="flex flex-col justify-start m-2 lg:m-6">
                     <p className="text-4xl font-bold leadi lg:text-6xl">50+</p>

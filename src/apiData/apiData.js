@@ -31,3 +31,14 @@ export async function getPostsData() {
     }
     return res.json();
 }
+
+// Get Single post
+export async function getSingleData(slug) {
+    const res = await fetch(process.env.BASE_URL + `blogs/${slug}`, {
+        cache: "no-store",
+    });
+    if (!res.ok) {
+        throw new Error("Failed to fetch data");
+    }
+    return res.json();
+}
