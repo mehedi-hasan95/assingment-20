@@ -1,6 +1,13 @@
+import { headers } from "next/headers";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 const DashboardLayout = ({ children }) => {
+    const headersList = headers();
+    const firstName = headersList.get("firstName");
+    if (firstName === "0") {
+        redirect("/user/login");
+    }
     return (
         <div>
             <div className="container mx-auto p-4 md:flex">
