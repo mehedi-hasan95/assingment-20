@@ -1,9 +1,17 @@
 "use client";
 
+import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const CreatePost = (params) => {
+    const [loading, setLoading] = useState(false);
+    const [catData, setCatData] = useState([]);
+    useEffect(() => {
+        fetch("http://localhost:3000/api/categories")
+            .then((response) => response.json())
+            .then((data) => setCatData(data));
+    }, []);
     const router = useRouter();
     //Convert title into slug
     const slugify = (str) =>
@@ -24,16 +32,19 @@ const CreatePost = (params) => {
         const short_desc = e.target.short_Desc.value;
         const desc = e.target.desc.value;
         const postImg = e.target.postImg.value;
+        const cat = e.target.cat.value;
         const data = {
             title,
             slug: slugify(title),
             short_desc,
             desc,
             postImg,
+            cat: parseInt(cat),
             featured,
             userId: parseInt(params.id),
         };
         try {
+            setLoading(true);
             const response = await fetch("/api/blogs", {
                 method: "POST", // or 'PUT'
                 headers: {
@@ -49,6 +60,8 @@ const CreatePost = (params) => {
             }
         } catch (error) {
             console.error("Error:", error);
+        } finally {
+            setLoading(false);
         }
     };
     return (
@@ -109,7 +122,26 @@ const CreatePost = (params) => {
                     />
                 </div>
                 <div className="flex flex-col gap-y-2">
-                    <label className="font-semibold">Post Image:</label>
+                    <label for="cat">Choose a Category:</label>
+
+                    <select
+                        name="cat"
+                        id="cat"
+                        className="border border-black px-3 py-2 rounded-lg w-full"
+                    >
+                        {catData?.categories?.map((item) => (
+                            <option
+                                key={item.id}
+                                value={item.id}
+                                className="py-3"
+                            >
+                                {item.title}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div className="flex flex-col gap-y-2">
+                    <label className="font-semibold">Is Featured?</label>
                     <div>
                         <span
                             onClick={toggleOption}
@@ -129,11 +161,23 @@ const CreatePost = (params) => {
                         </span>
                     </div>
                 </div>
-                <input
-                    type="submit"
-                    value="Post"
-                    className="text-xl font-semibold max-w-max bg-purple-400 px-5 py-2 rounded-lg text-white cursor-pointer mt-5"
-                />
+                {loading ? (
+                    <button
+                        disabled
+                        className="text-xl font-semibold max-w-max bg-purple-400 px-5 py-2 rounded-lg text-white cursor-pointer disabled:cursor-not-allowed flex items-center gap-2"
+                    >
+                        Creating...{" "}
+                        <span className="animate-spin">
+                            <Loader2 size={24} />
+                        </span>
+                    </button>
+                ) : (
+                    <input
+                        type="submit"
+                        value="Post"
+                        className="text-xl font-semibold max-w-max bg-purple-400 px-5 py-2 rounded-lg text-white cursor-pointer mt-5"
+                    />
+                )}
             </form>
         </div>
     );
