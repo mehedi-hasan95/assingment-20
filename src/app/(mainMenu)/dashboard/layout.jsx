@@ -1,10 +1,8 @@
-import MainMenu from "@/components/menu/MainMenu";
 import Link from "next/link";
 
 const DashboardLayout = ({ children }) => {
     return (
         <div>
-            <MainMenu />
             <div className="container mx-auto p-4 md:flex">
                 <div className="w-1/3 flex gap-5 flex-col bg py-10 px-2">
                     <Link

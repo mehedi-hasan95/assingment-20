@@ -36,7 +36,7 @@ const MainMenu = (props) => {
                         <h2 className="text-2xl font-bold">Logo</h2>
                     </Link>
                     <ul className="items-stretch hidden space-x-3 md:flex">
-                        {menus.map((item) => (
+                        {menus?.map((item) => (
                             <li key={item.id} className="flex">
                                 <Link
                                     href={item.slug}
@@ -63,7 +63,7 @@ const MainMenu = (props) => {
                             </Link>
                         </li>
                         <li className="flex">
-                            {props.firstName !== null ? (
+                            {props.firstName !== "0" ? (
                                 <button
                                     className="flex items-center px-4 -mb-1 capitalize"
                                     onClick={logOut}
@@ -83,7 +83,7 @@ const MainMenu = (props) => {
                                 </Link>
                             )}
                         </li>
-                        {props.firstName === null ? (
+                        {props.firstName === "0" ? (
                             <li className="flex">
                                 <Link
                                     href="/user/register"

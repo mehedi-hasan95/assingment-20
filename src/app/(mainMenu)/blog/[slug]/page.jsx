@@ -1,5 +1,4 @@
 import { getSingleData } from "@/apiData/apiData";
-import MainMenu from "@/components/menu/MainMenu";
 import { Calendar, Eye, User2 } from "lucide-react";
 import Image from "next/image";
 
@@ -8,7 +7,6 @@ const SingleBlog = async ({ params }) => {
     const data = await getSingleData(slug);
     return (
         <div>
-            <MainMenu />
             <div className="container mx-auto py-10">
                 <Image
                     src={data?.posts?.postImg}

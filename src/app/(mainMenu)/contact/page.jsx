@@ -1,5 +1,4 @@
 "use client";
-import MainMenu from "@/components/menu/MainMenu";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
@@ -36,7 +35,6 @@ const ContactPage = () => {
     };
     return (
         <div>
-            <MainMenu />
             <div className="container mx-auto p-4">
                 <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-max font-semibold pb-6 mx-auto titleBg pt-10">
                     Contact with Us:
