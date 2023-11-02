@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const CreatePost = (params) => {
     const router = useRouter();
@@ -12,6 +13,11 @@ const CreatePost = (params) => {
             .replace(/[^\w\s-]/g, "")
             .replace(/[\s_-]+/g, "-")
             .replace(/^-+|-+$&/g, "");
+    // Featured Post
+    const [featured, setFeatured] = useState(false);
+    const toggleOption = () => {
+        setFeatured(!featured);
+    };
     const handlePost = async (e) => {
         e.preventDefault();
         const title = e.target.title.value;
@@ -24,6 +30,7 @@ const CreatePost = (params) => {
             short_desc,
             desc,
             postImg,
+            featured,
             userId: parseInt(params.id),
         };
         try {
@@ -36,6 +43,7 @@ const CreatePost = (params) => {
             });
 
             const result = await response.json();
+            console.log(result);
             if (result.msg === "success") {
                 router.push("/dashboard");
             }
@@ -56,6 +64,7 @@ const CreatePost = (params) => {
                         id="title"
                         className="border border-black px-3 py-2 rounded-lg"
                         placeholder="Post title"
+                        required
                     />
                 </div>
                 <div className="flex flex-col gap-y-2">
@@ -69,6 +78,7 @@ const CreatePost = (params) => {
                         rows="2"
                         className="border border-black px-3 py-2 rounded-lg w-full"
                         placeholder="Short Desc"
+                        required
                     ></textarea>
                 </div>
                 <div className="flex flex-col gap-y-2">
@@ -82,6 +92,7 @@ const CreatePost = (params) => {
                         rows="5"
                         className="border border-black px-3 py-2 rounded-lg w-full"
                         placeholder="Your Content"
+                        required
                     ></textarea>
                 </div>
                 <div className="flex flex-col gap-y-2">
@@ -94,12 +105,34 @@ const CreatePost = (params) => {
                         id="postImg"
                         className="border border-black px-3 py-2 rounded-lg"
                         placeholder="Post Image CDN"
+                        required
                     />
+                </div>
+                <div className="flex flex-col gap-y-2">
+                    <label className="font-semibold">Post Image:</label>
+                    <div>
+                        <span
+                            onClick={toggleOption}
+                            className={`px-4 py-2 cursor-pointer rounded-l-md bg-gray-300 ${
+                                featured === false ? "bg-violet-300" : ""
+                            }`}
+                        >
+                            No
+                        </span>
+                        <span
+                            onClick={toggleOption}
+                            className={`px-4 py-2 cursor-pointer rounded-r-md bg-gray-300 ${
+                                featured === true ? "bg-violet-300" : ""
+                            }`}
+                        >
+                            Yes
+                        </span>
+                    </div>
                 </div>
                 <input
                     type="submit"
                     value="Post"
-                    className="text-xl font-semibold max-w-max bg-purple-400 px-5 py-2 rounded-lg text-white cursor-pointer"
+                    className="text-xl font-semibold max-w-max bg-purple-400 px-5 py-2 rounded-lg text-white cursor-pointer mt-5"
                 />
             </form>
         </div>
