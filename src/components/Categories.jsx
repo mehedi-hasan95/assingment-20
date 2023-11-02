@@ -4,7 +4,6 @@ import Link from "next/link";
 
 const Categories = async () => {
     const data = await getCategoriesData();
-    console.log(data);
     return (
         <div className="container mx-auto p-4 py-10">
             <h2 className="text-3xl md:text-4xl lg:text-5xl max-w-max font-semibold pb-6 mx-auto titleBg">
