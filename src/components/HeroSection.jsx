@@ -19,7 +19,7 @@ const HeroSection = () => {
                 </p>
                 <div className="text-center">
                     <Link
-                        href="/register"
+                        href="/user/register"
                         className="text-lg font-bold px-12 py-5 rounded-full bg-gradient-to-r from-indigo-800 to-purple-600 text-white"
                     >
                         Join now - it&apos;s free!

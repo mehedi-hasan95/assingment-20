@@ -4,13 +4,13 @@ import Hero from "@/components/Hero";
 import HeroSection from "@/components/HeroSection";
 import Post from "@/components/Post";
 import Testimonial from "@/components/Testimonial";
-import MenuLayout from "@/components/menu/MenuLayout";
+import MainMenu from "@/components/menu/MainMenu";
 
 export default async function Home() {
     const data = await getLatestData();
     return (
         <div>
-            <MenuLayout />
+            <MainMenu />
             <HeroSection />
             <Hero />
             <Testimonial />

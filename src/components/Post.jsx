@@ -21,7 +21,7 @@ const Post = (params) => {
                     <div className="flex flex-col flex-1 p-6">
                         <Link
                             href={`/categories/${item.categories.slug}`}
-                            className="text-xs tracki uppercase hover:underline dark:text-violet-400"
+                            className="uppercase hover:underline bg-rose-600 px-5 py-2 font-bold max-w-max rounded-lg text-white"
                         >
                             {item.categories.title}
                         </Link>

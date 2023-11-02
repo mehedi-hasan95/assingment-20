@@ -17,7 +17,12 @@ export async function POST(req, res) {
 
 export async function GET(req, res) {
     try {
-        const posts = await prisma.posts.findMany();
+        const posts = await prisma.posts.findMany({
+            include: {
+                categories: true,
+                users: true,
+            },
+        });
         return NextResponse.json({ msg: "success", posts });
     } catch (error) {
         return NextResponse.json({ msg: "faill", error });

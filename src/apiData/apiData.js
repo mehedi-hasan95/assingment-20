@@ -22,3 +22,12 @@ export async function getCategoriesData() {
     }
     return res.json();
 }
+
+// Get all posts
+export async function getPostsData() {
+    const res = await fetch(process.env.BASE_URL + "blogs");
+    if (!res.ok) {
+        throw new Error("Failed to fetch data");
+    }
+    return res.json();
+}
