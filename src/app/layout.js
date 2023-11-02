@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import FooterLayout from "@/components/footer/FooterLayout";
 import NextTopLoader from "nextjs-toploader";
+import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,6 +12,9 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+    const headersList = headers();
+    const id = headersList.get("id");
+    console.log(id);
     return (
         <html lang="en">
             <body

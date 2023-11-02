@@ -1,8 +1,6 @@
 import { NextResponse } from "next/server";
 import { JWTVerify } from "./JWTHelper";
-import { headers } from "next/headers";
-
-export async function CheckCookieAuth(req) {
+export async function JWTUtility(req, res) {
     try {
         let token = req.cookies.get("token");
         let payload = await JWTVerify(token["value"]);
@@ -21,4 +19,3 @@ export async function CheckCookieAuth(req) {
         });
     }
 }
-// Which page user can't visit without login
