@@ -4,6 +4,7 @@ import menus from "@/utils/MenuItems.json";
 import { AlignCenter, X } from "lucide-react";
 import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 const MainMenu = (props) => {
     const [open, setOpen] = useState(false);
     const pathName = usePathname();
@@ -30,10 +31,16 @@ const MainMenu = (props) => {
                 <div className="flex justify-between h-16 items-center">
                     <Link
                         href="/"
-                        aria-label="Back to homepage"
-                        className="flex items-center p-2"
+                        className="flex justify-center space-x-3 lg:justify-start text-xl items-center"
                     >
-                        <h2 className="text-2xl font-bold">Logo</h2>
+                        <Image
+                            src="/logo.svg"
+                            alt=""
+                            height={500}
+                            width={500}
+                            className="h-10 w-10"
+                        />
+                        <h2>Cultura</h2>
                     </Link>
                     <ul className="items-stretch hidden space-x-3 md:flex">
                         {menus?.map((item) => (

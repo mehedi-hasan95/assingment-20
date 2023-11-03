@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -9,10 +10,16 @@ const PlainMenu = () => {
             <div className="flex justify-between items-center">
                 <Link
                     href="/"
-                    aria-label="Back to homepage"
-                    className="flex items-center p-2"
+                    className="flex justify-center space-x-3 lg:justify-start text-xl items-center"
                 >
-                    <h2 className="text-2xl font-bold">Logo</h2>
+                    <Image
+                        src="/logo.svg"
+                        alt=""
+                        height={500}
+                        width={500}
+                        className="h-10 w-10"
+                    />
+                    <h2>Cultura</h2>
                 </Link>
                 <div className="flex">
                     <Link
