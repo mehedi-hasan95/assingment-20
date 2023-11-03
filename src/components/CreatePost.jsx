@@ -8,7 +8,7 @@ const CreatePost = (params) => {
     const [loading, setLoading] = useState(false);
     const [catData, setCatData] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:3000/api/categories")
+        fetch("/api/categories")
             .then((response) => response.json())
             .then((data) => setCatData(data));
     }, []);
