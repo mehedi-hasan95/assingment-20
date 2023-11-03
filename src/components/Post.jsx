@@ -31,16 +31,7 @@ const Post = (params) => {
                         >
                             {item.title}
                         </Link>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing
-                            elit. Sit molestiae quas corrupti dignissimos et
-                            harum veritatis officiis asperiores quam optio ad
-                            quo rerum explicabo obcaecati repudiandae tenetur
-                            corporis culpa accusantium dolores voluptates
-                            cupiditate, non voluptatem officia. Nisi omnis
-                            possimus ab nemo officiis consequuntur culpa error,
-                            ea animi. Distinctio, corrupti deserunt.
-                        </p>
+                        <p>{item.short_desc}</p>
                         <div className="flex flex-wrap justify-between pt-3 space-x-2 text-xs dark:text-gray-400">
                             <span>{item.createdAt.substring(0, 10)}</span>
                             <span>{item.count} Views</span>
