@@ -1,9 +1,11 @@
+import { getServiceData } from "@/apiData/apiData";
 import OurServices from "@/components/Service/OurServices";
 
-const SrvicePage = () => {
+const SrvicePage = async () => {
+    const data = await getServiceData();
     return (
         <div>
-            <OurServices />
+            <OurServices data={data} />
         </div>
     );
 };

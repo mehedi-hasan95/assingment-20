@@ -42,3 +42,12 @@ export async function getSingleData(slug) {
     }
     return res.json();
 }
+
+// Get services post
+export async function getServiceData() {
+    const res = await fetch(process.env.BASE_URL + "services");
+    if (!res.ok) {
+        throw new Error("Failed to fetch data");
+    }
+    return res.json();
+}
