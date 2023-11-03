@@ -57,7 +57,11 @@ const AuthorPosts = (params) => {
                 ))}
             </table>
             {selectedBlog && (
-                <Modal isOpen={isModalOpen} onClose={closeModal}>
+                <Modal
+                    selectedBlog={selectedBlog}
+                    isOpen={isModalOpen}
+                    onClose={closeModal}
+                >
                     <h2 className="text-lg">
                         Do you want to Delete{" "}
                         <span className="text-red-400 font-bold">
