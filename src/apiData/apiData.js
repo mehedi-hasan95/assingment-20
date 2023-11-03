@@ -51,3 +51,12 @@ export async function getServiceData() {
     }
     return res.json();
 }
+
+// Get Category post
+export async function getCategoryData(slug) {
+    const res = await fetch(process.env.BASE_URL + `categories/${slug}`);
+    if (!res.ok) {
+        throw new Error("Failed to fetch data");
+    }
+    return res.json();
+}
