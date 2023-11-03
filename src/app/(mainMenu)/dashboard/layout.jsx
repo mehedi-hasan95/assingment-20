@@ -30,6 +30,12 @@ const DashboardLayout = ({ children }) => {
                     >
                         Create Services
                     </Link>
+                    <Link
+                        href="/dashboard/author-posts"
+                        className="bg-slate-200 px-3 py-2 max-w-max "
+                    >
+                        Author Posts
+                    </Link>
                 </div>
                 <div className="w-2/3 py-10 px-2">{children}</div>
             </div>
